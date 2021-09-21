@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{cite}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+            
+        \Huge
+        \textbf{INFORMA2 S.A.S.}
+            
+        \vspace{0.5cm}
+        \LARGE
+        Parcial \#2
+            
+        \vspace{1.5cm}
+            
+        \textbf{Juan Diego Sanchez\\
+                David Santiago Rojo}
+            
+        \vfill
+            
+        \vspace{0.8cm}
+            
+        \Large
+        Departamento de Ingeniería Electrónica y de Telecomunicaciones\\
+        Universidad de Antioquia\\
+        Medellín\\
+        Septiembre de 2021
+            
+    \end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Sección introductoria}\label{intro}
+A partir de este trabajo se hace relación de diversos temas aprendidos en materias vinculados con la programacion y con los circuitos electricos, pero además de esto, se presenta una gran relación con el mundo actual, las nuevas tecnologias y los nuevos medios implementados para facilitar tareas que antes podian ocupar mas tiempo y mas dificultad; en este caso se trabajara en el diseño de un sistema el cual permita presentar las banderas de los paises deseados, esto con el fin de facilitar las ceremonias de premiación en diferentes eventos.
+
+\section{Análisis del problema} \label{contenido}
+Como se menciona la finalidad del proyecto es poder representar graficamente diferentes banderas a traves de una cantidad definidad de bombillos ledes, esta actividad se divide en dos grandes retos, primordialmente en el diseño y el montaje del circuito y todas las tareas que abarca esto, por otro lado referente a la progrmación, se debe realizar un estudio para llevar acabo el submuestreo y el sobremuestreo, los cuales son necearios para poder representar graficamente cualquier bandera sin importar las dimensiones de la imagen de entrada
+
+\section{Tareas definidas} \label{contenido}
+A continuación se hara un análisis detallado de las tareas a realizar: 
+\subsection{Diseño y montaje del circuito}
+Inicialmente antes de comenzar con el diseño del circuito, se hace un análisis total de la actividad, para de esta forma tomar la decisión correcta del tamaño del arreglo de tiras leds, ya que este tamaño va directamente relacionado con el algoritmo de muestreo; a partir de esto, se ha tomado la decisión de usar un arreglo de 16*16.\\
+Despues de esto, se hace el debido estudio de como se puede lograr conectar la cantida de tiras leds y a su vez poder controlarlas de manera indicada, algo importante a tener en cuenta es la necesidad de usar una fuente de voltaje dedicada, ya que el arduino se puede ver con problemas para alimentar totalmente la cantidad de dispositivos conectados
+
+
+\subsection{Submuestreo y sobremuestro}
+Usualmente estas tareas se realizan de una forma automatica a traves de librerias ya existentes, pero debido a los requerimientos de la actividad, se realizara de una forma manual, como se mencionó anteriormente, el tamaño definido es 16*16, eso es de gran importancia a la hora del muestreo, ya que en esa cantidad de espacios sera dividad la imagen que se ingrese, despues de manera detallada se analizara la intensidad de los colores dentro del margen seleccionado, en este punto aún se tienen dos caminos para abordar, el primero es promediar los valores que se encuentren dentro de la selección, la segunda opción es usar la moda, representando en ese espacio solo el color que mas veces se repita, estas dos alternativas son consideradas con el ideal de representar la bandera de la manera mas clara posible.
+
+\end{document}
