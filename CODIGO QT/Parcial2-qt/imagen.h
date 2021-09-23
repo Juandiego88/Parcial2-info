@@ -11,6 +11,10 @@ class Imagen
 {
 public:
     Imagen(string name);
+    void analisis();
+    void mostrar();
+    ~Imagen();
+
     
 private:
 
@@ -19,6 +23,10 @@ private:
     vector<int> rojo;
     vector<int> verde;
     vector<int> azul;
+    vector<int>rojosin;
+    vector<int>verdesin;
+    vector<int>azulsin;
+    vector<int>::iterator it;
     int Mrojo[leds][leds],Mverde[leds][leds],Mazul[leds][leds];
 
     
