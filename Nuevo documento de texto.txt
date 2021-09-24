@@ -1,0 +1,16 @@
+syms x
+Funcion = -heaviside(x-0.5)+heaviside(x+0.5);
+s= 0;
+for n=0:11
+    contador=((2*n+1)/2)*int( Funcion*legendreP(n,x),x,-1,1);
+    s = s + (contador*legendreP(n,x));
+end
+x = linspace(-1,1,55665);
+aproximacion = eval(s);
+inicial= eval(Funcion);
+plot(x,inicial,"b",'linewidth',2);
+hold on
+plot(x,aproximacion,"y",'linewidth',2);
+grid on
+legend('Funcion f(x)','Legendre');
+title("Polinomios Ortogonales Legendre");
