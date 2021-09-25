@@ -139,6 +139,53 @@ void Imagen::analisis()
 
 void Imagen::mostrar()
 {
+    ////////////CODIGO PARA IMPRIMIR 3 ARREGLOS INDIVIDUALES DE 256
+          /*  cout<<"\n\nbyte rojos[256] = {";
+            for(int i=0;i<16;i++) {
+                for(int j=0;j<16;j++) {
+                    if(i==15 && j==15)
+                        cout<<Mrojo[(j)][(i)]<<"};";
+                    else
+                        cout<<Mrojo[(j)][(i)]<<",";
+                }
+                cout<<endl;
+            }
+
+            cout<<"\n\nbyte verdes[256] = {";
+            for(int i=0;i<16;i++) {
+                for(int j=0;j<16;j++) {
+                    if(i==15 && j==15)
+                        cout<<Mverde[(j)][(i)]<<"};";
+                    else
+                        cout<<Mverde[(j)][(i)]<<",";
+                }
+                cout<<endl;
+            }
+
+            cout<<"\n\nbyte azules[256] = {";
+            for(int i=0;i<16;i++) {
+                for(int j=0;j<16;j++) {
+                    if(i==15 && j==15)
+                        cout<<Mazul[(j)][(i)]<<"};";
+                    else
+                        cout<<Mazul[(j)][(i)]<<",";
+                }
+                cout<<endl;
+            }*/
+    /////////CODIGO PARA IMPREMIR EL ARREGLO DE 256 LEDS RGB {R,G,B}
+            cout<<"{";
+            for(int i=0;i<16;i++) {
+                for(int j=0;j<16;j++){
+                    if(i==15 && j==15) {
+                        cout<<"{"<<Mrojo[(j)][(i)]<<","<<Mverde[(j)][(i)]<<","<<Mazul[(j)][(i)]<<"};";
+                    }
+                    else{
+                        cout<<"{"<<Mrojo[(j)][(i)]<<","<<Mverde[(j)][(i)]<<","<<Mazul[(j)][(i)]<<"},";
+                    }
+                }
+                cout<<endl;
+            }
+            cout<<"};\n\n";
 
 
 }
