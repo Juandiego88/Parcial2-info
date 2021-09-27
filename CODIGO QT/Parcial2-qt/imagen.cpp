@@ -1,4 +1,5 @@
 #include "imagen.h"
+#include <fstream>
 
 Imagen::Imagen(string name)
 {
@@ -139,55 +140,64 @@ void Imagen::analisis()
 
 void Imagen::mostrar()
 {
-    ////////////CODIGO PARA IMPRIMIR 3 ARREGLOS INDIVIDUALES DE 256
-          /*  cout<<"\n\nbyte rojos[256] = {";
-            for(int i=0;i<16;i++) {
-                for(int j=0;j<16;j++) {
-                    if(i==15 && j==15)
-                        cout<<Mrojo[(j)][(i)]<<"};";
-                    else
-                        cout<<Mrojo[(j)][(i)]<<",";
+        string str;
+        ofstream archivo;
+
+        archivo.open("bandera.txt",ios::out);
+
+        //////////CODIGO PARA IMPRIMIR 3 ARREGLOS INDIVIDUALES DE 256
+        cout<<"byte reds[256] = {";
+        archivo<<"byte reds[256] = {";
+        for(int i=0;i<16;i++) {
+            for(int j=0;j<16;j++) {
+                if(i==15 && j==15) {
+                    cout<<Mrojo[(j)][(i)]<<"};";
+                    archivo<<Mrojo[(j)][(i)]<<"};";
                 }
-                cout<<endl;
+                else {
+                    cout<<Mrojo[(j)][(i)]<<",";
+                    archivo<<Mrojo[(j)][(i)]<<",";
+                }
             }
+            cout<<"\n";
+            archivo<<"\n";
+        }
 
-            cout<<"\n\nbyte verdes[256] = {";
-            for(int i=0;i<16;i++) {
-                for(int j=0;j<16;j++) {
-                    if(i==15 && j==15)
-                        cout<<Mverde[(j)][(i)]<<"};";
-                    else
-                        cout<<Mverde[(j)][(i)]<<",";
+        cout<<"\n\nbyte greens[256] = {";
+        archivo<<"\n\nbyte greens[256] = {";
+        for(int i=0;i<16;i++) {
+            for(int j=0;j<16;j++) {
+                if(i==15 && j==15) {
+                    cout<<Mverde[(j)][(i)]<<"};";
+                    archivo<<Mverde[(j)][(i)]<<"};";
                 }
-                cout<<endl;
+                else {
+                    cout<<Mverde[(j)][(i)]<<",";
+                    archivo<<Mverde[(j)][(i)]<<",";
+                }
             }
+            cout<<"\n";
+            archivo<<"\n";
+        }
 
-            cout<<"\n\nbyte azules[256] = {";
-            for(int i=0;i<16;i++) {
-                for(int j=0;j<16;j++) {
-                    if(i==15 && j==15)
-                        cout<<Mazul[(j)][(i)]<<"};";
-                    else
-                        cout<<Mazul[(j)][(i)]<<",";
+        cout<<"\n\nbyte blues[256] = {";
+        archivo<<"\n\nbyte blues[256] = {";
+        for(int i=0;i<16;i++) {
+            for(int j=0;j<16;j++) {
+                if(i==15 && j==15) {
+                    cout<<Mazul[(j)][(i)]<<"};";
+                    archivo<<Mazul[(j)][(i)]<<"};";
                 }
-                cout<<endl;
-            }*/
-    /////////CODIGO PARA IMPREMIR EL ARREGLO DE 256 LEDS RGB {R,G,B}
-            cout<<"{";
-            for(int i=0;i<16;i++) {
-                for(int j=0;j<16;j++){
-                    if(i==15 && j==15) {
-                        cout<<"{"<<Mrojo[(j)][(i)]<<","<<Mverde[(j)][(i)]<<","<<Mazul[(j)][(i)]<<"};";
-                    }
-                    else{
-                        cout<<"{"<<Mrojo[(j)][(i)]<<","<<Mverde[(j)][(i)]<<","<<Mazul[(j)][(i)]<<"},";
-                    }
+
+                else {
+                    cout<<Mazul[(j)][(i)]<<",";
+                    archivo<<Mazul[(j)][(i)]<<",";
                 }
-                cout<<endl;
+
             }
-            cout<<"};\n\n";
-
-
+            cout<<"\n";
+            archivo<<"\n";
+        }
 }
 
 Imagen::~Imagen()

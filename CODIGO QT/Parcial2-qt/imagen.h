@@ -2,7 +2,7 @@
 #define IMAGEN_H
 #include <iostream>
 #include <QImage>
-#include <map>
+
 #include <vector>
 using namespace std;
 #define leds 16
@@ -15,7 +15,7 @@ public:
     void mostrar();
     ~Imagen();
 
-    
+
 private:
 
     QImage *imagen;
@@ -29,9 +29,9 @@ private:
 
     int Mrojo[leds][leds],Mverde[leds][leds],Mazul[leds][leds];
 
-    
-    
-    
+
+
+
 };
 
 #endif // IMAGEN_H
